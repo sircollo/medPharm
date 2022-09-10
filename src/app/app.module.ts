@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutComponent } from './aboutUs/about/about.component';
 import { ContactComponent } from './contactUs/contact/contact.component';
+import { ServicesPageComponent } from './our-services/services-page/services-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ContactComponent } from './contactUs/contact/contact.component';
     NavbarComponent,
     LandingPageComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ServicesPageComponent
   ],
   imports: [
     BrowserModule,
