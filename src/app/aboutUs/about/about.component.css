@@ -1,0 +1,15 @@
+.container {
+    height: 100vh;
+    background-color: white;
+}
+
+h2{
+    text-align: center;
+}
+
+#margin-auto-text-align {
+    width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
