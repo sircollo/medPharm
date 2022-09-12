@@ -10,6 +10,7 @@ import { ContactComponent } from './contactUs/contact/contact.component';
 import { ServicesPageComponent } from './our-services/services-page/services-page.component';
 import { FooterComponent } from './footerPage/footer/footer.component';
 import { NurseComponent } from './nurse/nurse.component';
+import { PatientLoginComponent } from './patient-login/patient-login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NurseComponent } from './nurse/nurse.component';
     ContactComponent,
     ServicesPageComponent,
     FooterComponent,
-    NurseComponent
+    NurseComponent,
+    PatientLoginComponent
   ],
   imports: [
     BrowserModule,
