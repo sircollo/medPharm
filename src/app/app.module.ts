@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { ServicesPageComponent } from './our-services/services-page/services-pag
 import { FooterComponent } from './footerPage/footer/footer.component';
 import { NurseComponent } from './nurse/nurse.component';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
+import { NurseDashboardComponent } from './nurse-dashboard/nurse-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,16 @@ import { PatientLoginComponent } from './patient-login/patient-login.component';
     ServicesPageComponent,
     FooterComponent,
     NurseComponent,
-    PatientLoginComponent
+    PatientLoginComponent,
+    NurseDashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
