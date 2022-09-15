@@ -9,6 +9,8 @@ import { AboutComponent } from './aboutUs/about/about.component';
 import { ContactComponent } from './contactUs/contact/contact.component';
 import { ServicesPageComponent } from './our-services/services-page/services-page.component';
 import { FooterComponent } from './footerPage/footer/footer.component';
+import { SignupComponent } from './med-register/signup/signup.component';
+import { DLoginComponent } from './doctor/d-login/d-login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FooterComponent } from './footerPage/footer/footer.component';
     AboutComponent,
     ContactComponent,
     ServicesPageComponent,
-    FooterComponent
+    FooterComponent,
+    SignupComponent,
+    DLoginComponent
   ],
   imports: [
     BrowserModule,
