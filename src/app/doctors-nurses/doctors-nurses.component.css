@@ -1,0 +1,46 @@
+.doctors-nurses{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 926px;
+  flex-wrap: wrap;
+}
+h2{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 43.95px;
+  line-height: 57px;
+  
+}
+p{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22.5px;
+  line-height: 36px;
+  width: 80%;
+}
+.doctors{
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.doctors img{
+  /* max-width: 300px;
+  max-height: 300px; */
+  border-radius: 50%;
+}
+h3{
+  text-align: center;
+
+}
+.nurses{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.nurses img{
+  border-radius: 50%;
+}
