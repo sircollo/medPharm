@@ -1,63 +1,204 @@
-.flex-container{
-  display:flex;
-  background: #002149;
-  top:88px;
-  margin-top: 7%;
-  height: 100vh;
-  /* justify-content: space-between; */
-  flex-wrap: wrap;
-  width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,700;1,800&display=swap');
 
+a{
+    color: inherit;
+    text-decoration: none;
 }
-/* .flex-container div{ */
-  /* border: 1px solid #ccc; */
-  /* padding: 10px; */
-/* } */
-.hero-text{
-  flex:1;
-  /* padding: 10px; */
- 
+
+/* background-elipse */
+
+.background-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-.hero-text h1{
-  margin: 0;
-  font-size: 48px;
-  /* font-weight: 700; */
-  color: #FFFFFF;
-  /* padding-top: 20%; */
-  /* margin: 2px; */
-  display: flex;
+
+/* hero-section */
+
+.hero-section{
+    background-color: #002E68;
+    background-image: linear-gradient(135deg, #002E68 0%, #002149 100%);
+}
+.one{
+    display: flex;
+    flex-direction: column;
+}
+.greeting-container{
+    padding: 5.6% 7%;
+}
+
+.greeting-heading{
+    margin: 20% 0 0 0;
+    font-weight: 400;
+    font-size: 80.29px;
+    color:white;
+}
+
+.greeting-text{
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+}
+
+.greeting-button {
+    font-size: 22.5px;
+    width:248px;
+    height:71.429px;
+    /* border-width:1px; */
+    color:rgba(1, 46, 105, 1);
+    border-color:transparent;
+    font-weight: 400;
+    border-radius: 32px;
+    background:rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+  }
   
+  .greeting-button:hover {
+    transform: scale(0.98);
+  }
+.button_text{
+    padding-left: 10px;
 }
-.hero-text h2{
-  color: #FFFFFF;
-  font-size: 14.4px;
-  margin: 2px;
-}
-.hero-text a{
-  width: 150px;
-  padding: 10px;
-  border-radius: 30px;
-}
-/* .hero-doctor{
- 
-}
-.hero-digital{
- 
-}
-.hero-tracker{
- 
-} */
+  .white-backdrop{
+    margin: 0% 0 0 35%;
+    background-color: #FAFCFC;
+    /* max-height: 90vh; */
+    height: 75vh;
+    /* max-width: 30vw; */
+    max-width: 25rem;
+    border-radius: 28px 28px 28px 28px;
+    text-align: center;
+    padding: 5% 5%;
+    color: #012F68;
+    display: block;
 
-.doctor{
-  display: flex;
-}
-.custom-shape-divider-top-1662850065 svg {
-  position: relative;
-  display: block;
-  width: calc(148% + 1.3px);
-  height: 157px;
+  }
+
+.pose-text{
+    font-size: 2rem;
 }
 
-.custom-shape-divider-top-1662850065 .shape-fill {
-  fill: #002E68;
+.doctor-pose{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    right: 3rem;
+    top: -1rem;
+}
+
+.best-doctors{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-evenly;
+    width: fit-content;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 50px 50px 50px 50px;
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); */
+    right: 7rem;
+    top: -25rem;
+}
+
+.best-doctors p{
+    margin: 0 !important;
+    padding-left: 10px;
+}
+
+.track-drugs{
+    align-items: center;
+    width: fit-content;
+    position: relative;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); */
+    right: -19rem;
+    top: -20rem;
+    
+}
+
+.track-drugs p{
+    margin: 0 !important;
+}
+                
+/* doctors and nurses section */
+
+.docs-nurses-section{
+    color: #000;
+    background-color: #FAFCFC;
+    height: 100vh;
+}
+
+/* media queries */
+@media screen and (max-width:480px){
+    html{
+        overflow-x: hidden !important;
+    }
+    .greeting-container{
+        padding: 0px 0 5px 0px;
+    }
+    h1{
+        font-size: 35px!important;
+    }
+    .greeting-text{
+        font-size: 10px;
+    }
+    .one{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .doctor-pose{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        /* right: 3rem; */
+        /* top: -1rem; */
+    }
+    .white-backdrop{
+        display: none;
+    
+      }
+    .best-doctors p{
+        margin: 0 !important;
+        padding-left: 5px !important;
+    }
+    .best-doctors p{
+        font-size: 11px;
+    }
+    .pose-text{
+        font-size: 18px;
+    }
+    .row-two{
+        display: flex;
+        
+    }
+    .greeting-button {
+    font-size: 15px;
+    width:150px;
+    height:40px;
+    /* border-width:1px; */
+    color:rgba(1, 46, 105, 1);
+    border-color:transparent;
+    font-weight: 400;
+    border-radius: 32px;
+    background:rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+ }
+ svg{
+    width: 25px;
+    height: 25px;
+ }
+   
 }
