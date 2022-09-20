@@ -10,7 +10,9 @@
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  background: #002149;
+  //background: #002149;
+  background: rgb(0,33,73);
+background: radial-gradient(circle, rgba(0,33,73,1) 71%, rgba(0,46,104,0.9864320728291317) 100%, rgba(0,33,73,1) 100%);
 }
 .footer-text h1{
   margin: 50px;
@@ -116,4 +118,4 @@ li{
     font-family: 'DM Sans';
     font-size: 11px;
   }
-}
+  }

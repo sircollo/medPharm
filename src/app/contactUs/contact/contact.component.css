@@ -14,14 +14,13 @@ h2{
 }
 
 
-.button
-{
+.btn{
     text-align: center;
     width: 150px;
     padding: 5px;
     color: white;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: #002E68;
 } */
 

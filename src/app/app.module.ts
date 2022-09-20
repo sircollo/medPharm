@@ -17,6 +17,10 @@ import { DoctorsNursesComponent } from './doctors-nurses/doctors-nurses.componen
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { GreetingTimerPipe } from './greeting-timer.pipe';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { SignupComponent } from './med-register/signup/signup.component';
+import { DLoginComponent } from './doctor/d-login/d-login.component';
+import { MedpharmComponent } from './account/medpharm/medpharm.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
     DoctorsNursesComponent,
     AdminDashboardComponent,
     GreetingTimerPipe,
-    DoctorDashboardComponent
+    DoctorDashboardComponent,
+    SignupComponent,
+    DLoginComponent,
+    MedpharmComponent
   ],
   imports: [
     BrowserModule,
