@@ -12,6 +12,11 @@ import { FooterComponent } from './footerPage/footer/footer.component';
 import { NurseComponent } from './nurse/nurse.component';
 import { PatientLoginComponent } from './patient-login/patient-login.component';
 import { NurseDashboardComponent } from './nurse-dashboard/nurse-dashboard.component';
+import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
+import { DoctorsNursesComponent } from './doctors-nurses/doctors-nurses.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { GreetingTimerPipe } from './greeting-timer.pipe';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { NurseDashboardComponent } from './nurse-dashboard/nurse-dashboard.compo
     FooterComponent,
     NurseComponent,
     PatientLoginComponent,
-    NurseDashboardComponent
+    NurseDashboardComponent,
+    PatientDashboardComponent,
+    DoctorsNursesComponent,
+    AdminDashboardComponent,
+    GreetingTimerPipe,
+    DoctorDashboardComponent
   ],
   imports: [
     BrowserModule,
