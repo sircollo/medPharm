@@ -1,0 +1,122 @@
+.container-fluid{
+  background: #D673E6;
+  height: auto;
+}
+.logo{
+  color: #FFFFFF;
+  /* position: absolute; */
+  margin-top: 30px;
+  padding: 2%;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
+.col-md-6{
+  height: auto;
+}
+.doctor-panel{
+  display: flex;
+  padding: 10px 5px 0px;
+  max-width: 640px;
+}
+.doctor-icon {
+  margin: 2px 3px 0 0;
+  width: 45px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+.doctor-text{
+  padding: 25px 8px 0 10px;
+  color: #FFFFFF;
+}
+.panel{
+  background: #FFFFFF;
+  border-radius: 10px;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.icon{
+  align-self: center;
+    
+}
+.card-header{
+  display: flex;
+}
+.list-group-item{
+  flex:1;
+  display: flex;
+}
+.list-group-item span{
+  margin-left: auto;
+}
+h2{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36.625px;
+  line-height: 48px;
+  color: #37474F;
+  width: 100%;
+
+}
+.patient-details{
+  align-items: center;
+  width: 350px;
+}
+label{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+input {
+  border: 0px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  border-bottom: 5px solid #C3C7FD;
+  border-radius: 0px;
+}
+input:focus{
+  transition: ease-in-out, width .35s ease-in-out;
+  border-color: #D673E6;
+  outline: none !important;
+  border:2px solid #D673E6;
+  box-shadow: 0 0 10px #D673E6;
+}
+
+.done-btn{
+  display: flex;
+  align-items: center;
+  margin-left:auto;
+  background: #747CEF;
+  border-radius: 12px;
+  color: #fff;
+  width: auto;
+  height: 32px;
+}
+.send-details{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10%;
+}
+.send-btn, .track-btn{
+  background: #747CEF;
+  border-radius: 12px;
+  color: #fff;
+  width: 157px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width:480px){
+
+}

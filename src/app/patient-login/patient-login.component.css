@@ -1,0 +1,59 @@
+.background-radial-gradient{
+  background: #61176D;
+  height: 100vh;
+}
+.col-md-6{
+ width: 100%;
+}
+h2{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36.625px;
+  line-height: 48px;
+  /* identical to box height */
+
+  text-align: center !important;
+
+  color: #37474F;
+  padding-top: 10%;
+
+}
+.form-login{
+  padding-top: 2%;
+}
+
+.card{
+  height:92vh;
+}
+img{
+  width: 88%;
+  height: auto;
+}
+.form-control{
+  background: rgba(234, 234, 234, 0.38);
+  border-radius: 50px;
+  width: 550px;
+  margin-top: 40px;
+}
+.btn-login{
+  background: #407BFF;
+  border-radius: 21px;
+  align-items: center;
+  padding: 10px 50px;
+  gap: 15px;
+  position: relative;
+}
+.logo{
+  position: absolute;
+  margin-top: 10px;
+  color: #FFFFFF;
+  padding: 3%;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 24px;
+
+}
+
