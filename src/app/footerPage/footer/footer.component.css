@@ -1,0 +1,49 @@
+.container {
+    height: 50vh;
+    background: rgb(0,33,73);
+background: radial-gradient(circle, rgba(0,33,73,1) 71%, rgba(0,46,104,0.9864320728291317) 100%, rgba(0,33,73,1) 100%);
+}
+
+
+
+h1{
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 3rem;
+    padding-top: 8%;
+}
+
+.btn{
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    color: #002E68;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: white;
+    margin-top:5%;
+}
+
+.inner{
+    height: 8.5vh;
+    margin-top: 8.7%;
+    background-color: #002C63;
+    
+}
+
+.policy{
+    max-width: 50%;
+    
+}
+.icons{
+    font-size: 1.5rem;
+    color: white;
+}
+
+i{
+    padding: 5px;
+    margin-bottom: auto;
+    margin-right: auto;
+}
