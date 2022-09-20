@@ -1,5 +1,5 @@
 .container {
-    height: 70vh;
+    height: 80vh;
     background-color: white;
 }
 
@@ -14,13 +14,12 @@ h2{
 }
 
 
-.button
-{
+.btn{
     text-align: center;
     width: 150px;
     padding: 5px;
     color: white;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: #002E68;
 }
