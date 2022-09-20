@@ -9,7 +9,7 @@ defineFullCalendarElement();
   styleUrls: ['./nurse-dashboard.component.css']
 })
 export class NurseDashboardComponent implements OnInit {
-
+  time = new Date();
   constructor() { }
 
   ngOnInit(): void {
