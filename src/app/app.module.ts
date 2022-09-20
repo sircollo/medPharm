@@ -11,6 +11,7 @@ import { ServicesPageComponent } from './our-services/services-page/services-pag
 import { FooterComponent } from './footerPage/footer/footer.component';
 import { SignupComponent } from './med-register/signup/signup.component';
 import { DLoginComponent } from './doctor/d-login/d-login.component';
+import { MedpharmComponent } from './account/medpharm/medpharm.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DLoginComponent } from './doctor/d-login/d-login.component';
     ServicesPageComponent,
     FooterComponent,
     SignupComponent,
-    DLoginComponent
+    DLoginComponent,
+    MedpharmComponent
   ],
   imports: [
     BrowserModule,
