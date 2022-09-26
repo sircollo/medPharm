@@ -1,5 +1,5 @@
 .background-radial-gradient{
-  background: #61176D;
+  background: #979CDF;
   height: 100vh;
 }
 .col-md-6{
@@ -37,11 +37,12 @@ img{
   margin-top: 40px;
 }
 .btn-login{
-  background: #407BFF;
+  background: #979CDF;
   border-radius: 21px;
   align-items: center;
   padding: 10px 50px;
   gap: 15px;
+  color: #FFFFFF;
   position: relative;
 }
 .logo{
