@@ -1,27 +1,36 @@
 <div class="container-fluid">
-<div class="header">
-    <nav>
-	<a href="" target="_blank" class="logo">MedPharm</a>
-	<ul>
-		<li><a href="">Services</a></li>
-		<li><a href="">About</a></li>
-		<li><a href="">Contact us</a></li>
-	</ul>
-    </nav>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">Medpharm</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarText">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="#">Services<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Contact us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="content">
     <!-- column1 -->
     <div class="sign">
         <h2 class="mb-5">Bringing comfort and ease to your health at your finger tips</h2>
-        <form name="form">
     <div class="login-form">
+        <form name="form">
     <!-- email -->
-    <div class="mb-4 input-field">
+    <div class="mb-4 form-group">
         <label for="email">Email</label>
         <input type="text" class="form-control" name="email" required minlength="3" maxlength="100" placeholder="your email@domaim.com" />
     </div>
     <!-- password -->
-    <div class="mb-4 input-field">
+    <div class="mb-4 form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" name="password" required minlength="6" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679; &#9679; &#9679; &#9679;"  />
     </div>
@@ -32,9 +41,12 @@
         <p>Don't Have an Account?</p>
         <a href="signup" class="create">Sign Up</a>
     </div>
-    <div id="ellipse">
+    
+</form>
+</div>
+<div id="ellipse">
     <div class="footer">
-        <div class="paragraph">
+        <div class="paragraph mt-3">
         <p>Get Started</p>
         </div>
         <div class="email">
@@ -43,12 +55,10 @@
     </div>
 </div>
 </div>
-</div>
-</form>
     </div>
     <!-- column2 -->
     <div class="image">
-        <img src="/assets/signup.png" class="img-responsive" alt="signup">
+        <img src="/assets/signup.png" class="img-fluid" alt="signup">
     </div>
 </div>
     </div>
