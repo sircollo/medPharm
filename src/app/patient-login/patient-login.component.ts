@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { TokenStorageService } from '../services/token-storage.service';
 @Component({
   selector: 'app-patient-login',
   templateUrl: './patient-login.component.html',
@@ -12,7 +13,8 @@ export class PatientLoginComponent implements OnInit {
     password:null,
   }
   userName!: null;
-  constructor(private authService:AuthService, private router:Router){ }
+  errorMessage = ''
+  constructor(private authService:AuthService, private router:Router, private tokenStorage:TokenStorageService){ }
 
   ngOnInit(): void {
   }
@@ -22,6 +24,9 @@ export class PatientLoginComponent implements OnInit {
       data => {
         console.log(data);
         console.log(data.data.roles)
+        alert(data.message);
+        this.tokenStorage.saveToken(data.bearer)
+        this.tokenStorage.saveUser(data);
         if ( data.data.roles[0] === "Admin"){
           this.router.navigate(["/admin-dashboard"]).then(() => {
               window.location.reload();
@@ -36,9 +41,12 @@ export class PatientLoginComponent implements OnInit {
           this.router.navigate(["/nurse-dashboard"]).then(() => {
             window.location.reload();
           });
-        } 
+        }
+      },err => {
+          this.errorMessage = err.error.message;
+          alert(this.errorMessage)
       }
-    )
+    );
 
   }
 
