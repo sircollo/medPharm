@@ -25,18 +25,25 @@
         <div class="col-md-6 leftside p-5">
             <h2 class="">Your basic information</h2>
 
-        <form action="">
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f.value)" >
             <div class="right">
                 <!-- one -->
+        <!-- {{f.value|json}} -->
         <div class="row">
         <div class="col">
             <label for="fName">First name</label>
-            <input type="text" name="fName" id="fName" placeholder="David" required>
+            <input type="text" name="firstName" [(ngModel)]="form.firstName" #firstName="ngModel" id="fName" placeholder="David" required>
+            <div class="alert-danger" *ngIf="firstName.errors && f.submitted" >
+                <div *ngIf="firstName.errors?.['required']">First Name required</div>
+            </div>
         </div>
 
         <div class="col">
             <label for="lName">Last name</label>
-            <input type="text" name="lName" id="lName" placeholder="John" required>
+            <input type="text" name="lastName" [(ngModel)]="form.lastName" #lastName="ngModel" id="lName" placeholder="John" required>
+            <div class="alert-danger" *ngIf="lastName.errors && f.submitted" >
+                <div *ngIf="lastName.errors?.['required']">Last Name required</div>
+            </div>
         </div>
         
         </div>
@@ -44,29 +51,33 @@
         <div class="row">
         <div class="col">
             <label for="email">Email</label>
-            <input type="text" name="fName" id="fName" placeholder="Yakubu334@gmail.com" required>
+            <input type="email" name="email" [(ngModel)]="form.email" #email="ngModel" id="fName" placeholder="Yakubu334@gmail.com" required>
+            <div class="alert-danger" *ngIf="email.errors && f.submitted" >
+                <div *ngIf="email.errors?.['required']">First Name required</div>
+            </div>
         </div>
 
         <div class="col">
             <label for="No.">Username</label>
-            <input type="text" name="username" id="username" placeholder="sircollins" required>
+            <input type="text" name="userName" [(ngModel)]="form.userName" #userName="ngModel" id="username" placeholder="sircollins" required>
+            <div class="alert-danger" *ngIf="userName.errors && f.submitted" >
+                <div *ngIf="userName.errors?.['required']">UserName required</div>
+            </div>
         </div>
         </div>
         <!--  -->
         <div class="row all">
         <div class="col gender d-flex justify-content-between">
             <label for="email">Gender</label>
-            <select name="" id="">
-                <option value="">Male</option>
-                <option value="">Female</option>
+            <select name="gender" type="number" [(ngModel)]="form.gender" id="">
+                <option *ngFor='let gen of gender'  [ngValue]="gen" >{{gen}}</option>
             </select>
         </div>
 
         <div class="col role d-flex justify-content-between">
             <label for="No.">Role</label>
-            <select name="" id="">
-                <option value="">Staff</option>
-                <option value="">Patient</option>
+            <select name="roleNames" type="text" [(ngModel)]="form.roleNames" id="">
+                <option  *ngFor='let role of roleNames' [ngValue]="role">{{role}}</option>
             </select>
         </div>
         </div>
@@ -74,12 +85,18 @@
         <div class="row">
         <div class="col">
             <label for="rstate">Phone Number</label>
-            <input type="text" name="No" id="No" placeholder="+254743 444 111" required>
+            <input type="text" name="phoneNumber" [(ngModel)]="form.phoneNumber" #phoneNumber="ngModel" id="No" placeholder="+254743 444 111" required>
+            <div class="alert-danger" *ngIf="phoneNumber.errors && f.submitted" >
+                <div *ngIf="phoneNumber.errors?.['required']">Phone Number required</div>
+            </div>
         </div>
 
         <div class="col">
             <label for="No.">Address</label>
-            <input type="text" name="address" id="address" placeholder="NGA-3456-SD678" required>
+            <input type="text" name="address" [(ngModel)]="form.address" #address="ngModel" id="address" placeholder="NGA-3456-SD678" required>
+            <div class="alert-danger" *ngIf="address.errors && f.submitted" >
+                <div *ngIf="address.errors?.['required']">Address required</div>
+            </div>
         </div>
         </div>
             
@@ -88,15 +105,20 @@
         <div class="row">
             <div class="col pass">
             <label for="">Password</label>
-                <span class="far">Show</span>
-    <input id="password" type="password" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;">
+                <input id="password" type="password" name="password" [(ngModel)]="form.password" #password="ngModel" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required minlength="8">
+                <div class="alert-danger" *ngIf="password.errors && f.submitted" >
+                <div *ngIf="password.errors?.['required']">Password required</div>
+                <div *ngIf="password.errors?.['minlength']">Password must be at least 8 characters</div>
+            </div>
         </div>
 
         <div class="col pass">
             <label for="">Confirm Password</label>
-                <span class="far">Show</span>
-            <input type="text" name="" id="" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required>
-            
+                <input type="password" name="password1" pattern="{{password.value}}" id="" [(ngModel)]="form.password1" #password1="ngModel" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required>
+                <div class="alert-danger" *ngIf="password1.errors && f.submitted" >
+                <div *ngIf="password1.errors?.['required']">Password required</div>
+                <div *ngIf="password1.errors?.['pattern']">Password mismatch</div>
+            </div>
         </div>
         </div>
         <div class="row">
@@ -115,7 +137,7 @@
             <!-- </div>
             </div> -->
 <div class="col">
-    <button>Register</button>
+    <button type='submit'>Register</button>
 </div>
 
         </div>
