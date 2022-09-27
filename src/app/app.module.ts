@@ -1,6 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -20,7 +19,9 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
 import { SignupComponent } from './med-register/signup/signup.component';
 import { DLoginComponent } from './doctor/d-login/d-login.component';
 import { MedpharmComponent } from './account/medpharm/medpharm.component';
-
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,9 @@ import { MedpharmComponent } from './account/medpharm/medpharm.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],
