@@ -18,13 +18,13 @@
 // 	  }
 //   })
 // })
-window.onscroll = () => {
-  const nav = document.querySelector('#navbar');
-  if(this.scrollY <= 10){
-    nav.css("background" , "#987 !important"); 
-  }
-  else nav.css("background" , "#333333");  
-};
+// window.onscroll = () => {
+//   const nav = document.querySelector('#navbar');
+//   if(this.scrollY <= 10){
+//     nav.css("background" , "#987 !important"); 
+//   }
+//   else nav.css("background" , "#333333");  
+// };
 
 // const hamburger = document.querySelector(".hamburger");
 // const navMenu = document.querySelector(".nav-menu");
@@ -45,3 +45,18 @@ window.onscroll = () => {
 //     navMenu.classList.remove("active");
 // }
 
+function scrollServices(){
+  window.scrollTo(0,1500);
+}
+function scrollAbout(){
+  window.scrollTo(0,2200);
+}
+function scrollWin(){
+  window.scrollTo(0,2000);
+}
+function scrollContact(){
+  window.scrollTo(0,2700);
+}
+function scrollDoctors(){
+  window.scrollTo(0,650);
+}
