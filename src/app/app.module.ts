@@ -20,8 +20,8 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
 import { SignupComponent } from './med-register/signup/signup.component';
 import { DLoginComponent } from './doctor/d-login/d-login.component';
 import { MedpharmComponent } from './account/medpharm/medpharm.component';
-
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,11 +41,13 @@ import { MedpharmComponent } from './account/medpharm/medpharm.component';
     DoctorDashboardComponent,
     SignupComponent,
     DLoginComponent,
-    MedpharmComponent
+    MedpharmComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
 
   ],
   providers: [],
