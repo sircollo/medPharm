@@ -18,13 +18,13 @@
 // 	  }
 //   })
 // })
-window.onscroll = () => {
-  const nav = document.querySelector('#navbar');
-  if(this.scrollY <= 10){
-    nav.css("background" , "#987 !important"); 
-  }
-  else nav.css("background" , "#333333");  
-};
+// window.onscroll = () => {
+//   const nav = document.querySelector('#navbar');
+//   if(this.scrollY <= 10){
+//     nav.css("background" , "#987 !important"); 
+//   }
+//   else nav.css("background" , "#333333");  
+// };
 
 // const hamburger = document.querySelector(".hamburger");
 // const navMenu = document.querySelector(".nav-menu");
