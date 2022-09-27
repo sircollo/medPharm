@@ -1,29 +1,49 @@
-<div class="container-fluid">
+    <div class="container-fluid">
     <!-- header -->
-    <div class="navbar">
-            <h1>MedPharm</h1>
-            <div class="left">
-            <p>You have an account?</p>
-            <a href="">Login</a>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">Medpharm</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarText">
+    <ul class="navbar-nav ml-auto d-flex align-items-center ">
+            <p class="mb-0">You have an account?</p>
+        <li class="nav-item  active">
+        <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+        </li>
+
+    </ul>
     </div>
+</nav>
     <!-- main -->
-    <div class="main">
+
+    <div class="container main">
+        <div class="row">
+        <div class="col-md-6 main-img  p-5">
         <img src="/assets/medbro.png" alt="" srcset="">
-        <div class="leftside">
-            <h2>Your basic information</h2>
-        <form action="">
+        </div>
+        <div class="col-md-6 leftside p-5">
+            <h2 class="">Your basic information</h2>
+
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f.value)" >
             <div class="right">
                 <!-- one -->
+        <!-- {{f.value|json}} -->
         <div class="row">
         <div class="col">
             <label for="fName">First name</label>
-            <input type="text" name="fName" id="fName" placeholder="David" required>
+            <input type="text" name="firstName" [(ngModel)]="form.firstName" #firstName="ngModel" id="fName" placeholder="David" required>
+            <div class="alert-danger" *ngIf="firstName.errors && f.submitted" >
+                <div *ngIf="firstName.errors?.['required']">First Name required</div>
+            </div>
         </div>
 
         <div class="col">
             <label for="lName">Last name</label>
-            <input type="text" name="lName" id="lName" placeholder="John" required>
+            <input type="text" name="lastName" [(ngModel)]="form.lastName" #lastName="ngModel" id="lName" placeholder="John" required>
+            <div class="alert-danger" *ngIf="lastName.errors && f.submitted" >
+                <div *ngIf="lastName.errors?.['required']">Last Name required</div>
+            </div>
         </div>
         
         </div>
@@ -31,87 +51,340 @@
         <div class="row">
         <div class="col">
             <label for="email">Email</label>
-            <input type="text" name="fName" id="fName" placeholder="Yakubu334@gmail.com" required>
+            <input type="email" name="email" [(ngModel)]="form.email" #email="ngModel" id="fName" placeholder="Yakubu334@gmail.com" required>
+            <div class="alert-danger" *ngIf="email.errors && f.submitted" >
+                <div *ngIf="email.errors?.['required']">First Name required</div>
+            </div>
         </div>
 
         <div class="col">
-            <label for="No.">Phone Number</label>
-            <input type="text" name="NO." id="No." placeholder="2349056723456" required>
+            <label for="No.">Username</label>
+            <input type="text" name="userName" [(ngModel)]="form.userName" #userName="ngModel" id="username" placeholder="sircollins" required>
+            <div class="alert-danger" *ngIf="userName.errors && f.submitted" >
+                <div *ngIf="userName.errors?.['required']">UserName required</div>
+            </div>
+        </div>
+        </div>
+        <!--  -->
+        <div class="row all">
+        <div class="col gender d-flex justify-content-between">
+            <label for="email">Gender</label>
+            <select name="gender" type="number" [(ngModel)]="form.gender" id="">
+                <option *ngFor='let gen of gender'  [ngValue]="gen" >{{gen}}</option>
+            </select>
+        </div>
+
+        <div class="col role d-flex justify-content-between">
+            <label for="No.">Role</label>
+            <select name="roleNames" type="text" [(ngModel)]="form.roleNames" id="">
+                <option  *ngFor='let role of roleNames' [ngValue]="role">{{role}}</option>
+            </select>
         </div>
         </div>
         <!-- three -->
         <div class="row">
         <div class="col">
-            <label for="rstate">Registered State</label>
-            <input type="text" name="rstate" id="rstate" placeholder="Lagos" required>
-        </div>
-
-        <div class="col">
-            <label for="No.">Registration Number</label>
-            <input type="text" name="rNo" id="eNo" placeholder="NGA-3456-SD678" required>
-        </div>
-        </div>
-            <h4>Pharmacy or Hospital info</h4>
-
-        <div class="row">
-            <div class="col">
-            <label for="hospital">Hospital</label>
-            <input type="text" name="hospital" id="hospital" placeholder=""  style="width: 400px;" required>
+            <label for="rstate">Phone Number</label>
+            <input type="text" name="phoneNumber" [(ngModel)]="form.phoneNumber" #phoneNumber="ngModel" id="No" placeholder="+254743 444 111" required>
+            <div class="alert-danger" *ngIf="phoneNumber.errors && f.submitted" >
+                <div *ngIf="phoneNumber.errors?.['required']">Phone Number required</div>
             </div>
         </div>
-        <!-- four -->
-        <div class="row">
-        <div class="col">
-            <label for="rstate">Address</label>
-            <input type="text" name="" id="" placeholder="" required>
-        </div>
 
         <div class="col">
-            <label for="No.">Zip</label>
-            <input type="text" name="" id="" placeholder="" style = "Width: 85px;" required>
+            <label for="No.">Address</label>
+            <input type="text" name="address" [(ngModel)]="form.address" #address="ngModel" id="address" placeholder="NGA-3456-SD678" required>
+            <div class="alert-danger" *ngIf="address.errors && f.submitted" >
+                <div *ngIf="address.errors?.['required']">Address required</div>
+            </div>
         </div>
-        <div class="col">
-            <label for="No.">State</label>
-            <input type="text" name="" id="" placeholder="" style = "Width: 85px;" required>
         </div>
-        </div>
+            
+        
         <!-- five -->
-            <h4>Choose your password </h4>
         <div class="row">
-            <div class="col">
+            <div class="col pass">
             <label for="">Password</label>
-                <span class="far">Show</span>
-    <input id="password" type="password" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;">
+                <input id="password" type="password" name="password" [(ngModel)]="form.password" #password="ngModel" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required minlength="8">
+                <div class="alert-danger" *ngIf="password.errors && f.submitted" >
+                <div *ngIf="password.errors?.['required']">Password required</div>
+                <div *ngIf="password.errors?.['minlength']">Password must be at least 8 characters</div>
+            </div>
         </div>
 
-        <div class="col">
+        <div class="col pass">
             <label for="">Confirm Password</label>
-                <span class="far">Show</span>
-            <input type="text" name="" id="" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required>
+                <input type="password" name="password1" pattern="{{password.value}}" id="" [(ngModel)]="form.password1" #password1="ngModel" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required>
+                <div class="alert-danger" *ngIf="password1.errors && f.submitted" >
+                <div *ngIf="password1.errors?.['required']">Password required</div>
+                <div *ngIf="password1.errors?.['pattern']">Password mismatch</div>
+            </div>
         </div>
         </div>
         <div class="row">
-            <div class="col">
-                <span>Must contain atleast 8 letters</span>
-                <span>Must Contain one Number</span>
-                <span>Must Contain one Upper class</span>
+            <div class="col paragraph p-3">
+                <p><em>Must contain atleast 8 letters</em></p>
+                <p><em>Must Contain one Number</em></p>
+                <p><em>Must Contain one Upper class</em></p>
             </div>
         </div>
 <hr>
-        <div class="row ">
-            <div class="col">
+        <!-- <div class="row ">
+            <div class="col"> -->
                 <div class="check">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" class="mr-auto " name="" id="">
             <p>I agree I have read and compile with rules set down</p>
-            </div>
-            </div>
+            <!-- </div>
+            </div> -->
 <div class="col">
-    <button>Register</button>
+    <button type='submit'>Register</button>
 </div>
 
         </div>
         </div>
         </form>
+        
         </div>
     </div>
+    </div>
 </div>
+
+
+
+<!-- ::placeholder{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 32px;
+    color:rgba(41, 45, 50, 1);
+}
+
+.right input
+    {
+    background: rgba(222, 239, 253, 0.4);
+    border: 1px solid #767676;
+    border-radius: 4px;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+    width: 200px;
+    height: 34px;
+    outline: none;
+} -->
+
+<!-- .right label {
+    color: rgba(128, 128, 128, 1);
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 0.1rem;
+}
+
+h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(41, 45, 50, 1);
+    letter-spacing: 0.1rem;
+    
+}
+
+.check p {
+    color: #000000b2;
+    font-size: 13px;
+    width: 220px;
+    
+    
+}
+
+button{
+    width: 185px;
+    height: 46px;
+    background: #407BFF;
+    border-radius: 5px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    border: #407BFF;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 1);
+
+}
+hr{
+    width: 400px;
+    height: 1px;
+    background: #D9D9D9;
+    margin-left: 0%;
+}
+.far {
+    position: absolute;
+    right: 14px;
+    bottom: 0.45rem;
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-size: 15px;
+}
+
+
+
+input[type=checkbox]{
+    accent-color: red;
+    transform: scale(1);
+}
+
+/* media queries */
+@media(max-width:480px){
+    img{
+        display: none;
+    }
+    button.navbar-toggler{
+    padding: 0 !important;
+    display: flex;
+    justify-content: flex-end;
+}
+    .col{
+        padding-right: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin: 0;
+        padding: 0%;
+    }
+    form{
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        margin-left: 0;
+        margin-left: 30px !important;
+    }
+    .right{
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    .right input{
+        width: 180px;
+        margin-bottom: 15px !important;
+    }
+    .leftside h2{
+        color: #000000;
+        margin-bottom: 0;
+        margin-right: 0;
+        
+    }
+}
+
+/* 768 */
+@media(max-width:768px){
+    img{
+        width: auto;
+        margin-right: auto;
+        height: auto;
+        
+    }
+    .main-img{
+        display: flex;
+        justify-content: flex-start !important;
+        
+    }
+    button.navbar-toggler{
+    padding: 0 !important;
+    display: flex;
+    justify-content: flex-end;
+}
+    .col{
+        padding-right: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin: 0;
+        padding: 0%;
+    }
+    form{
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        margin-left: 25%;
+        margin-right: 0;
+    }
+
+    .right input{
+        width: 180px;
+        margin-bottom: 15px !important;
+    }
+    .leftside h2{
+        color: #000000;
+        
+    }
+
+    .far{
+        bottom: 0.6rem;
+    }
+}
+
+/* 1024 */
+@media(max-width:1024px){
+    .main img{
+        width: 350px;
+    }
+    button.navbar-toggler{
+    /* padding: 0 !important; */
+    display: flex;display: none;
+    justify-content: flex-end;
+}
+    .col{
+        padding-right: 0 !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin: 0;
+        padding: 0%;
+    }
+    form{
+        width: 100% !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+        margin-left: 25%;
+        margin-right: 0;
+    }
+
+    .right input{
+        width: 180px;
+        margin-bottom: 15px !important;
+    }
+    .leftside h2{
+        color: #000000;
+        margin-bottom: 10% !important;
+    }
+
+    .far{
+        bottom: 0.4rem;
+    }
+} -->

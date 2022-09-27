@@ -12,10 +12,10 @@ import { FooterComponent } from './footerPage/footer/footer.component';
 import { SignupComponent } from './med-register/signup/signup.component';
 import { DLoginComponent } from './doctor/d-login/d-login.component';
 import { MedpharmComponent } from './account/medpharm/medpharm.component';
-import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 const routes: Routes = [
-  // {path: 'nurse', component: NurseComponent },
+  {path: 'nurse', component: NurseComponent },
   {path: 'login', component: PatientLoginComponent },
   {path: 'nurse-dashboard', component: NurseDashboardComponent },
   {path: 'patient-dashboard', component: PatientDashboardComponent },
