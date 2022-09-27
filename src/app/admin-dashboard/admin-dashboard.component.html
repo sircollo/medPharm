@@ -1,9 +1,13 @@
 <div class="container-fluid">
-  <div class="logo">
-    <a href="">MedPharm</a>
+  <div class="logo d-flex">
+    <a href="/">MedPharm</a>
+    <a href="/" class="ml-auto">
+      <button type="submit" class="btn btn-sm btn-block ml-auto logout" style="background-color:#FCD878;"(click)="logout()" type="button">Log Out</button>
+    </a>
   </div>  
   <div class="med-admin py-4">
-    <h1>Welcome, Admin</h1>
+    <h1>Welcome Admin, <em>{{username}}</em></h1>
+    
     <div class="search ml-auto">
       <input type="text" class="form-control" placeholder="Search">
       <i class="fa fa-search"></i>
@@ -30,21 +34,21 @@
   </div>
   <h2 class="text-center py-5">Nearby Pharmacy and Hospitals</h2>
   <div class="nearby">
-    <div class="hospital">
+    <div class="hospital mt-2">
       <img src="./assets/images/pharmacy 2.png" alt="" srcset="">
       <div class="hospital-header">
         <h6>Drug Point pharmacy  </h6>
         <p>32B YABA Tech Quaters, Aggrey...</p>
       </div>
     </div>
-    <div class="hospital">
+    <div class="hospital mt-2">
       <img src="./assets/images/pharmacy 2.png" alt="" srcset="">
       <div class="hospital-header">
         <h6>Sheba Pharmacy </h6>
         <p>9 University Road Akoka Yaba</p>
       </div>
     </div>
-    <div class="hospital">
+    <div class="hospital mt-2">
       <img class="mr-auto"src="./assets/images/pharmacy 2.png" alt="" srcset="">
       <div class="hospital-header">
         <h6>Mainland Hospital</h6>
