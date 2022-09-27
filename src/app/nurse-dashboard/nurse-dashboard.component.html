@@ -5,7 +5,7 @@
       <div class="nurse-panel panel-default">
         <img class="nurse-icon" src="./assets/images/13295328_5160427-removebg-preview 2.png" alt="" srcset="" width="45px" height="100%">
         <div class="nurse-text">
-          <h6>Hi Nurse Shade,</h6>
+          <h6>Hi Nurse {{username}},</h6>
           <p>{{ time | greetingTimer}}</p>
         </div>
         <div class="icon ml-auto">
@@ -32,8 +32,8 @@
     <div class="col-md-6 px-4 py-5 mr-auto" style="height: auto;">
       <div class="panel panel-heading">
         <h2 class="text-center p-3">Your Patient for today</h2>
-        <h3>Today's Medicines</h3>
-        <div class="search py-2">
+        <h3 class="p-2">Today's Medicines</h3>
+        <div class="search py-2 p-2">
           <input type="text" class="form-control" placeholder="Search Medicines">
           <i class="fa fa-search"></i>
           <div class="add-medicine">
@@ -83,7 +83,7 @@
                  </li>
              </ul>
          </div>
-         <div class="send-doctor">
+         <div class="send-doctor mb-3">
           <button class="btn btn">Send to Doctor</button>
          </div>
       

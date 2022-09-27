@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions, defineFullCalendarElement } from '@fullcalendar/web-component';
 import dayGridPlugin from '@fullcalendar/daygrid';
-
+import { TokenStorageService } from '../services/token-storage.service';
 defineFullCalendarElement();
 @Component({
   selector: 'app-nurse-dashboard',
@@ -10,9 +10,13 @@ defineFullCalendarElement();
 })
 export class NurseDashboardComponent implements OnInit {
   time = new Date();
-  constructor() { }
+  username!:any;
+  constructor(private tokenStorage:TokenStorageService) { }
 
   ngOnInit(): void {
+    const user = this.tokenStorage.getUser();
+    this.username = user.data.userName
+    console.log(user)
   }
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
