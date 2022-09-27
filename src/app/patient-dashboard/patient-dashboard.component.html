@@ -1,11 +1,13 @@
 <div class="container-fluid">
-  <a href="" class="logo">MedPharm</a>
+  <!-- <div class="logo"> -->
+    <a href="/" class="logo p-2">MedPharm</a>
+  <!-- </div>     -->
   <div class="row">
     <div class="col-md-5 px-4 py-5 ml-auto">
       <div class="nurse-panel panel-default">
         <img class="nurse-icon" src="./assets/images/13295328_5160427-removebg-preview 2.png" alt="" srcset="" width="45px" height="100%">
         <div class="nurse-text">
-          <h6>Hi Tinu,</h6>
+          <h6>Hi {{username}},</h6>
           <p>{{ time | greetingTimer}}</p>
         </div>
         <div class="icon ml-auto">
@@ -67,7 +69,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6 px-4 py-5 mr-auto" style="height: auto;">
+    
+    <div class="col-md-6 px-4 py-5 ml-auto" style="height: auto;">
       <div class="panel panel-heading">
         <h2 class="text-center p-3" style="color: #37474F;">Today</h2>
         <h3>Today's Medicines</h3>
@@ -123,6 +126,9 @@
          </div>
          <div class="send-doctor">
           <button class="btn btn">Send to Doctor</button>
+          <a href="/" class="ml-auto">
+            <button type="submit" class="btn btn-sm btn-block ml-auto text-light logout" (click)="logout()" type="button">Log Out</button>
+          </a>
          </div>
       
     </div>
