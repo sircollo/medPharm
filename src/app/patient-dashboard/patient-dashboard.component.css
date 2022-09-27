@@ -2,6 +2,7 @@
   background: #61166D;
   height: auto;
   /* position: absolute; */
+
 }
 .logo{
   color: #FFFFFF;
@@ -13,9 +14,8 @@
   font-weight: 600;
   font-size: 20px;
 }
-
 .col-md-6{
-  height: 100vh;
+  height: auto;
 }
 
 .nurse-panel {
@@ -395,4 +395,20 @@ textarea{
 }
 textarea::placeholder{
   padding: 2%;
+}
+.send-doctor a{
+  text-decoration: none;
+}
+@media (max-width: 768px){
+  .col-md-5{
+    overflow-y: hidden !important;
+    width: 100%;
+  }
+  a{
+    text-align: center !important;
+  }
+  .panel-heading, .container-calender{
+    padding: 0px !important;
+    max-width: 550px !important;
+  }
 }
