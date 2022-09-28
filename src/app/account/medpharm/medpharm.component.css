@@ -1,0 +1,289 @@
+.container-fluid{
+    width: 100%;
+}
+
+.main-img{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 5px auto;
+    padding: 0;
+} 
+
+::placeholder{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 32px;
+    color:rgba(41, 45, 50, 1);
+}
+
+.right input
+    {
+    background: rgba(222, 239, 253, 0.4);
+    border: 1px solid #767676;
+    border-radius: 4px;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+    width: 220px;
+    height: 34px;
+    outline: none;
+} 
+
+.right label {
+    color: rgba(128, 128, 128, 1);
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    /* margin-bottom: 0.1rem; */
+}
+
+h4{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(41, 45, 50, 1);
+    letter-spacing: 0.1rem;
+    
+}
+
+select{
+    background-color: rgba(222, 239, 253, 0.4);
+}
+
+button{
+    width: 185px;
+    height: 46px;
+    background: #407BFF;
+    border-radius: 5px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    border: #407BFF;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 1);
+
+}
+.paragraph p{
+    line-height: 10px;
+}
+.check{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-link{
+    color: rgba(53, 65, 248, 1)!important;
+}
+
+input[type=checkbox]{
+    accent-color: rgba(222, 239, 253, 0.4);
+    transform: scale(1);
+}
+
+.far {
+    position: absolute;
+    right: 14px;
+    bottom: 0.45rem;
+    padding: 15px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-size: 15px;
+}
+.navbar-toggler{
+    background-color: transparent !important;
+}
+/* media queries */
+@media(max-width:480px){
+    img{
+        display: none;
+    }
+    button.navbar-toggler{
+    background-color: transparent !important;
+    width: auto;
+}
+.main-img{
+    padding: 10px !important;
+}
+.leftside{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+h2{
+    text-align: center;
+}
+.col{
+    display: flex;
+    justify-content: space-between;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+}
+.all .col{
+    margin-bottom: 15px;
+}
+select{
+    width: 220px;
+}
+.pass{
+    display: flex;
+    align-items: center;
+}
+span.far{
+    display: none;
+}
+.paragraph{
+    flex-direction: column;
+    font-size: 13px;
+}
+.check p{
+    font-size: 12px;
+}
+}
+@media(max-width:768px){
+    img{
+        display: none;
+    }
+    button.navbar-toggler{
+    background-color: transparent !important;
+    width: auto;
+}
+.main-img{
+    padding: 10px !important;
+}
+.leftside{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+h2{
+    text-align: center;
+}
+.col{
+    display: flex;
+    justify-content: space-between;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+}
+.all .col{
+    margin-bottom: 15px;
+}
+select{
+    width: 220px;
+}
+.pass{
+    display: flex;
+    align-items: center;
+}
+span.far{
+    display: none;
+}
+.paragraph{
+    flex-direction: column;
+    font-size: 13px;
+}
+.check p{
+    font-size: 12px;
+}
+}
+@media(max-width:1024px){
+
+    button.navbar-toggler{
+    background-color: transparent !important;
+    width: auto;
+}
+.main-img{
+    padding: 10px !important;
+}
+.leftside{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+h2{
+    text-align: center;
+}
+.col{
+    display: flex;
+    justify-content: space-between;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+}
+.all .col{
+    margin-bottom: 15px;
+}
+select{
+    width: 220px;
+}
+.pass{
+    display: flex;
+    align-items: center;
+}
+span.far{
+    display: none;
+}
+.paragraph{
+    flex-direction: column;
+    font-size: 13px;
+}
+.check p{
+    font-size: 12px;
+}
+}
+@media(max-width:1200px){
+
+    button.navbar-toggler{
+    background-color: transparent !important;
+    width: auto;
+}
+.main-img{
+    padding: 10px !important;
+}
+.leftside{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+h2{
+    text-align: center;
+}
+.col{
+    display: flex;
+    justify-content: space-between;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+}
+.all .col{
+    margin-bottom: 15px;
+}
+select{
+    width: 220px;
+}
+.pass{
+    display: flex;
+    align-items: center;
+}
+span.far{
+    display: none;
+}
+.paragraph{
+    flex-direction: column;
+    font-size: 13px;
+}
+.check p{
+    font-size: 12px;
+}
+}

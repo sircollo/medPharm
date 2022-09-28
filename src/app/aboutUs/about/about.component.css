@@ -1,0 +1,59 @@
+.container {
+    height: auto;
+    background-color: white;
+}
+
+h2{
+    text-align: center;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 43.95px;
+    line-height: 57px;
+}
+
+#margin-auto-text-align {
+    width: 881px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22.5px;
+    line-height: 36px;
+}
+@media( max-width:480px){
+    h2{
+        margin: auto;
+        font-size: 30px;
+    }
+    #margin-auto-text-align {
+        width: auto;
+        margin: 20px auto;
+        text-align: center;
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+    }
+}
+@media( max-width:1024px){
+    h2{
+        margin: auto;
+        font-size: 35px;
+    }
+    #margin-auto-text-align {
+        width: auto;
+        margin: 20px auto;
+        text-align: center;
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 36px;
+    }
+    .img-responsive{
+        text-align: center;
+    }
+}
