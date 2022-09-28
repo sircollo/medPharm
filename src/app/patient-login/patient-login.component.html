@@ -1,31 +1,5 @@
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-5">
-      <a href="">MedPharm</a>
-      <img src="./assets/images/Remedy-amico 1.png" alt="" srcset="">
-    </div>
-    <div class="col-md-7">
-      <div class="patient-login">
-        <h2 class="text-center text-light">Welcome</h2>
-        <form>
-          <div class="form-group">
-            <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-          </div>
-          <button type="submit" class="btn btn-login">Login</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- Section: Design Block -->
-<section class="background-radial-gradient overflow-hidden"> 
+
+<section class="background-radial-gradient"> 
   <a href="" class="logo">MedPharm</a>
   <div class="container px-4 py-2 px-md-0 text-center text-lg-start my-1">
     <div class="row gx-lg-2 align-items-center mb-5">
@@ -38,12 +12,31 @@
         <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
             <h2 class="text-center">Welcome!</h2>
-            <form class="form-login">
+            <form class="form-login" name="form" (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm" novalidate>
+            <!-- {{f.value | json}} -->
+            <!-- <div class="form-group">
+              <div class="alert alert-danger" role="alert" *ngIf="f.submitted %% !f.form.valid">
+                Incorrect Username or Password
+              </div>
+            </div> -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" placeholder="email"/>
+                <input type="email" id="form3Example3" class="form-control" name="userId" placeholder="email"[(ngModel)]="form.userId" required #userId="ngModel"/>
+                <div class="alert-danger" *ngIf="userId.errors && f.submitted">
+                  <div *ngIf="userId.errors?.['required']">Email is required</div>
+                  <div *ngIf="userId.errors?.['email']">
+                    Email must be a valid email address
+                  </div>
+                </div>
               </div>
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" placeholder="password"/>
+                <input type="password" id="form3Example4" class="form-control" placeholder="password" name="password" [(ngModel)]="form.password" required  #password="ngModel"/>
+                <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors?.['required']">Password is required</div>
+                <div *ngIf="password.errors?.['minlength']">
+                  Password must be at least 8 characters
+                </div>
+              </div>
               </div>
                 <div class="row mb-4">
                   <div class="col d-flex ">
@@ -57,8 +50,8 @@
                     <a href="#!">Forgot password?</a>
                   </div>
                 </div>
-              <button type="submit" class="btn btn-login mb-4">
-                Sign up
+              <button type="submit" class="btn btn-login mb-4 text-light">
+                Sign in
               </button>
             </form>
           </div>

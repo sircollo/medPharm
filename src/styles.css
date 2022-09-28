@@ -10,5 +10,10 @@ body{
   margin: 0px;
   overflow-x: hidden;
   font-family: 'DM Sans'
+  
 }
 
+html {
+  scroll-behavior: smooth;
+  
+}
