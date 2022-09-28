@@ -95,12 +95,15 @@
         </div>
       </div>
       <div class="pharmacists mt-5">
-        <div class="pharmacist">
+        <div class="pharmacist" *ngFor="let user of users">
+          
           <img class=""src="./assets/images/pharmacist 1.png" alt="" srcset="">
           <div class="pharmacist-header">
-            <h6>Ph. Shade</h6>
-            <p>phamacist</p>
+            <h6>{{user.userName}}</h6>
+            <div  *ngFor="let item of user.roles">
+            <p>{{item.name}}</p>
           </div>
+        </div>
           <input type="checkbox" name="" id="">
         </div>
         <div class="pharmacist">
