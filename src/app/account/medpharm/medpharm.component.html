@@ -32,7 +32,7 @@
         <div class="row">
         <div class="col">
             <label for="fName">First name</label>
-            <input type="text" name="firstName" [(ngModel)]="form.firstName" #firstName="ngModel" id="fName" placeholder="David" required>
+            <input type="text" name="firstName" [(ngModel)]="form.firstName" #firstName="ngModel" placeholder="David" required>
             <div class="alert-danger" *ngIf="firstName.errors && f.submitted" >
                 <div *ngIf="firstName.errors?.['required']">First Name required</div>
             </div>
@@ -40,7 +40,7 @@
 
         <div class="col">
             <label for="lName">Last name</label>
-            <input type="text" name="lastName" [(ngModel)]="form.lastName" #lastName="ngModel" id="lName" placeholder="John" required>
+            <input type="text" name="lastName" [(ngModel)]="form.lastName" #lastName="ngModel"  placeholder="John" required>
             <div class="alert-danger" *ngIf="lastName.errors && f.submitted" >
                 <div *ngIf="lastName.errors?.['required']">Last Name required</div>
             </div>
@@ -51,7 +51,7 @@
         <div class="row">
         <div class="col">
             <label for="email">Email</label>
-            <input type="email" name="email" [(ngModel)]="form.email" #email="ngModel" id="fName" placeholder="Yakubu334@gmail.com" required>
+            <input type="email" name="email" [(ngModel)]="form.email" #email="ngModel"  placeholder="Yakubu334@gmail.com" required>
             <div class="alert-danger" *ngIf="email.errors && f.submitted" >
                 <div *ngIf="email.errors?.['required']">First Name required</div>
             </div>
@@ -69,7 +69,7 @@
         <div class="row all">
         <div class="col gender d-flex justify-content-between">
             <label for="email">Gender</label>
-            <select name="gender" type="number"class="form-select" [(ngModel)]="form.gender" id="">
+            <select name="gender" type="number"class="form-select" [(ngModel)]="form.gender" >
                 <!-- <option *ngFor='let gen of gender' [ngValue]="gen" >{{gen}}</option> -->
                 <option [ngValue]="1">Male</option>
                 <option [ngValue]="2">Female</option>
@@ -78,7 +78,7 @@
 
         <div class="col role d-flex justify-content-between">
             <label for="No.">Role</label>
-            <select name="roleNames" type="text" [(ngModel)]="form.roleNames" id="">
+            <select name="roleNames" type="text" [(ngModel)]="form.roleNames">
                 <option  *ngFor='let role of roleNames' [ngValue]="role">{{role}}</option>
             </select>
         </div>
@@ -116,7 +116,7 @@
 
         <div class="col pass">
             <label for="">Confirm Password</label>
-                <input type="password" name="password1" pattern="{{password.value}}" id="" [(ngModel)]="form.password1" #password1="ngModel" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required>
+                <input type="password" name="password1" pattern="{{password.value}}" [(ngModel)]="form.password1" #password1="ngModel" placeholder="&#9679; &#9679; &#9679; &#9679; &#9679;" required>
                 <div class="alert-danger" *ngIf="password1.errors && f.submitted" >
                 <div *ngIf="password1.errors?.['required']">Password required</div>
                 <div *ngIf="password1.errors?.['pattern']">Password mismatch</div>
@@ -134,7 +134,7 @@
         <!-- <div class="row ">
             <div class="col"> -->
                 <div class="check">
-            <input type="checkbox" class="mr-auto " name="" id="">
+            <input type="checkbox" class="mr-auto " name="">
             <p>I agree I have read and compile with rules set down</p>
             <!-- </div>
             </div> -->
