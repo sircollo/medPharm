@@ -1,7 +1,7 @@
     <div class="container-fluid">
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">Medpharm</a>
+    <a class="navbar-brand" href="/">Medpharm</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,7 +9,7 @@
     <ul class="navbar-nav ml-auto d-flex align-items-center ">
             <p class="mb-0">You have an account?</p>
         <li class="nav-item  active">
-        <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
         </li>
 
     </ul>
@@ -69,8 +69,10 @@
         <div class="row all">
         <div class="col gender d-flex justify-content-between">
             <label for="email">Gender</label>
-            <select name="gender" type="number" [(ngModel)]="form.gender" id="">
-                <option *ngFor='let gen of gender'  [ngValue]="gen" >{{gen}}</option>
+            <select name="gender" type="number"class="form-select" [(ngModel)]="form.gender" id="">
+                <!-- <option *ngFor='let gen of gender' [ngValue]="gen" >{{gen}}</option> -->
+                <option [ngValue]="1">Male</option>
+                <option [ngValue]="2">Female</option>
             </select>
         </div>
 
