@@ -29,7 +29,7 @@ const routes: Routes = [
   // { path: "d-login", component: DLoginComponent },
   { path: "medpharm", component: MedpharmComponent },
   { path: "doctor-dashboard", component:DoctorDashboardComponent, canActivate: [AuthenticationGuard]},
-  { path: "admin-dashboard", component:AdminDashboardComponent, canActivate: [AuthenticationGuard]},
+  { path: "admin-dashboard", component:AdminDashboardComponent },
 
 
   // otherwise redirect to home
