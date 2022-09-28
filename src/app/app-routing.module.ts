@@ -14,11 +14,12 @@ import { DLoginComponent } from './doctor/d-login/d-login.component';
 import { MedpharmComponent } from './account/medpharm/medpharm.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { AuthenticationGuard } from './services/authentication.guard';
 const routes: Routes = [
   {path: 'nurse', component: NurseComponent },
   {path: 'login', component: PatientLoginComponent },
-  {path: 'nurse-dashboard', component: NurseDashboardComponent },
-  {path: 'patient-dashboard', component: PatientDashboardComponent },
+  {path: 'nurse-dashboard', component: NurseDashboardComponent, canActivate: [AuthenticationGuard] },
+  {path: 'patient-dashboard', component: PatientDashboardComponent, canActivate: [AuthenticationGuard] },
   { path: '', component: LandingPageComponent },
   { path: "about", component: AboutComponent },
   { path: "contact", component: ContactComponent },
@@ -27,8 +28,8 @@ const routes: Routes = [
   // { path: "register", component: SignupComponent },
   // { path: "d-login", component: DLoginComponent },
   { path: "medpharm", component: MedpharmComponent },
-  { path: "doctor-dashboard", component:DoctorDashboardComponent},
-  { path: "admin-dashboard", component:AdminDashboardComponent},
+  { path: "doctor-dashboard", component:DoctorDashboardComponent, canActivate: [AuthenticationGuard]},
+  { path: "admin-dashboard", component:AdminDashboardComponent, canActivate: [AuthenticationGuard]},
 
 
   // otherwise redirect to home

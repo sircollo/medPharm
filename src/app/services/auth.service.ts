@@ -10,6 +10,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  verifyKey() {
+    throw new Error('Method not implemented.');
+  }
+  remove() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) { }
   login(userId:string, password:string):Observable<any>{
