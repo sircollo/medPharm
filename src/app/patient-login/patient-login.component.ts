@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../services/token-storage.service';
+import { Spinkit } from 'ng-http-loader';
 @Component({
   selector: 'app-patient-login',
   templateUrl: './patient-login.component.html',
   styleUrls: ['./patient-login.component.css']
 })
 export class PatientLoginComponent implements OnInit {
+  spinnerStyle = Spinkit;
   form:any = {
     userId:null,
     password:null,

@@ -22,6 +22,7 @@ import { MedpharmComponent } from './account/medpharm/medpharm.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgHttpLoaderModule.forRoot(),
 
   ],
   providers: [],

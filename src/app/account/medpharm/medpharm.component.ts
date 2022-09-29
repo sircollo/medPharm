@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Spinkit } from 'ng-http-loader';
 @Component({
   selector: 'app-medpharm',
   templateUrl: './medpharm.component.html',
@@ -21,6 +22,7 @@ export class MedpharmComponent implements OnInit {
   // gender: any = [1, 2]
   roleNames: any = [["Staff"], ["Patient"]]
   errorMessage = ''
+  spinnerStyle = Spinkit;
   constructor(private http : HttpClient, private router:Router) { }
 
   ngOnInit(): void {
