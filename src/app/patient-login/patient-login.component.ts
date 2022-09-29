@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../services/token-storage.service';
 import { Spinkit } from 'ng-http-loader';
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-patient-login',
   templateUrl: './patient-login.component.html',
@@ -16,7 +17,7 @@ export class PatientLoginComponent implements OnInit {
   }
   userName!: null;
   errorMessage = ''
-  constructor(private authService:AuthService, private router:Router, private tokenStorage:TokenStorageService){ }
+  constructor(private authService:AuthService, private router:Router, private tokenStorage:TokenStorageService, private toast:NgToastService){ }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,8 @@ export class PatientLoginComponent implements OnInit {
       data => {
         console.log(data);
         console.log(data.data.roles)
-        alert(data.message);
+        // alert(data.message);
+        this.toast.success({detail:"Success", summary:"data.message", duration:5000})
         this.tokenStorage.saveToken(data.bearer)
         this.tokenStorage.saveUser(data);
         if ( data.data.roles[0] === "Admin"){
@@ -46,7 +48,8 @@ export class PatientLoginComponent implements OnInit {
         }
       },err => {
           this.errorMessage = err.error.message;
-          alert(this.errorMessage)
+          console.log(this.errorMessage)
+          this.toast.error({detail:"Error", summary:"Login Failed", duration:5000})
       }
     );
 

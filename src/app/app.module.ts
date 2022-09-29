@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { NgToastModule } from 'ng-angular-popup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     HttpClientModule,
     FormsModule,
     NgHttpLoaderModule.forRoot(),
+    NgToastModule,
 
   ],
   providers: [],
