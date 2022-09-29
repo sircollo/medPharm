@@ -23,7 +23,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgHttpLoaderModule } from 'ng-http-loader';
-import { NgToastModule } from 'ng-angular-popup';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,13 @@ import { NgToastModule } from 'ng-angular-popup';
     HttpClientModule,
     FormsModule,
     NgHttpLoaderModule.forRoot(),
-    NgToastModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      preventDuplicates: true,
+}),
+    
+
 
   ],
   providers: [],
