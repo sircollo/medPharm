@@ -20,15 +20,11 @@
           <div class="card-header bg-light">
             <h3>Schedule</h3> <span class="ml-auto"><i class="fa fa-bell fa-2x" style="color:#d1c12d;"></i></span>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio <span>2:00 pm</span> </li>
-            <li class="list-group-item">Dapibus ac facilisis in <span>2:00 pm</span></li>
-            <li class="list-group-item">Vestibulum at eros <span>2:00 pm</span></li>
-            <li class="list-group-item">Cras justo odio <span>2:00 pm</span></li>
-            <li class="list-group-item">Dapibus ac facilisis in <span>2:00 pm</span> </li>
-            <li class="list-group-item">Vestibulum at eros <span>2:00 pm</span></li>
+          <ul class="list-group list-group-flush" *ngFor="let reminder of reminders.rows">
+            <li class="list-group-item" *ngFor="let time of reminder.tasks">{{reminder.remindFor}} <span>{{time.todoTime | date}}</span> </li>
           </ul>
         </div>
+        <hr>
         <div class="chat-section py-3">
           <div class="chat ml-auto mr-auto">
             <h5 class="text-center text-light">Chat with your Doctor</h5>
@@ -78,7 +74,7 @@
           <input type="text" class="form-control" placeholder="Search Medicines">
           <i class="fa fa-search"></i>
           <div class="add-medicine">
-            <a href="#">
+            <a href="" data-toggle="modal" data-target="#modalLoginForm">
             <i class="fa fa-plus fa-2x" style="color:#FFFFFF; background-color: #61166D; padding:0 5px 0 5px; border-radius: 8px;" ></i>
           </a>
           </div>
@@ -134,3 +130,72 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Add Schedule</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form novalidate name="form" #f="ngForm" (ngSubmit)="f.form.valid && postReminder(f.value)">
+        <!-- {{f.value|json}} -->
+      <div class="modal-body mx-3">
+        <div class="md-form mb-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Reminder For</label>
+          <input type="text" required name="remindFor" [(ngModel)]="form.remindFor" #remindFor="ngModel" id="defaultForm-reminderFor" class="form-control">         
+          <div class="alert-danger" *ngIf="remindFor.errors && f.submitted" >
+            <div *ngIf="remindFor.errors?.['required']">Required!</div>
+        </div>
+        </div>
+
+        <div class="md-form mb-2 py-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-remindFor">Reminder Type</label><br>
+          <select name="reminderType" [(ngModel)]="form.reminderType" #reminderType="ngModel" type="number"class="form-select w-100 h-20">
+            <option [ngValue]="1">Daily</option>
+            <option [ngValue]="2">Non-Daily</option>
+        </select>  
+        <div class="alert-danger" *ngIf="reminderType.errors && f.submitted" >
+          <div *ngIf="reminderType.errors?.['required']">Required!</div>
+      </div>      
+        </div>
+        <div class="md-form mb-2 py-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-reminderDays">Reminder Days</label>
+          <input type="number" required name="reminderDays" [(ngModel)]="form.reminderDays" #reminderDays="ngModel" id="defaultForm-reminderDays" class="form-control"  min="1" max="30">         
+          <div class="alert-danger" *ngIf="reminderDays.errors && f.submitted" >
+            <div *ngIf="reminderDays.errors?.['required']">Required!</div>
+            <div *ngIf="reminderDays.errors?.['min']">Enter valid days</div>
+            <div *ngIf="reminderDays.errors?.['max']">Enter valid days</div>
+        </div>
+        </div>
+        <div class="md-form mb-2 py-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-todo">To do</label>
+          <input type="text" required name="todo" [(ngModel)]="form.todo" #todo="ngModel" id="defaultForm-todo" class="form-control">         
+          <div class="alert-danger" *ngIf="todo.errors && f.submitted" >
+            <div *ngIf="todo.errors?.['required']">Required!</div>
+        </div>
+        </div>
+        <div class="md-form mb-2 py-2">
+          <label data-error="wrong" data-success="right" for="defaultForm-todoTime">To Do Date/Time</label>
+          <input type="datetime-local" required name="todoTime" [(ngModel)]="form.todoTime" #todoTime="ngModel" id="defaultForm-email" class="form-control">  
+          <div class="alert-danger" *ngIf="todoTime.errors && f.submitted" >
+            <div *ngIf="todoTime.errors?.['required']">Required!</div>
+        </div>       
+        </div>    
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="submit" class="btn btn-block btn-add">Add</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<ng-http-loader
+[backgroundColor]="'#979CDF'">
+  
+</ng-http-loader>

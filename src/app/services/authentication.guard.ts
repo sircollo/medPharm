@@ -16,9 +16,9 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    const loggedIn = true; // or false get you logged in status from state 
+    const isloggedIn = true; // or false get you logged in status from state 
     const user = this.tokenStorage.getUser();
-    if (!user) {
+    if (user) {
       return true;
     }
     this.router.navigate(["login"]);

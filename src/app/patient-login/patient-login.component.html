@@ -21,7 +21,7 @@
               </div>
             </div> -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" name="userId" placeholder="email"[(ngModel)]="form.userId" required #userId="ngModel"/>
+                <input type="email" id="form3Example3" class="form-control" name="userId" placeholder="email or username"[(ngModel)]="form.userId" required #userId="ngModel"/>
                 <div class="alert-danger" *ngIf="userId.errors && f.submitted">
                   <div *ngIf="userId.errors?.['required']">Email is required</div>
                   <div *ngIf="userId.errors?.['email']">

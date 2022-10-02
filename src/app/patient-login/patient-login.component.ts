@@ -38,8 +38,8 @@ export class PatientLoginComponent implements OnInit {
             });
         }
         else if( data.data.roles[0] === "Patient" ){
-          this.router.navigate(["/patient-dashboard"]).then(() => {
-            window.location.reload();
+          this.router.navigate(["patient-dashboard"]).then(() => {
+            // window.location.reload();
           });
         } 
         else if( data.data.roles[0] === "Staff" ){
@@ -50,7 +50,7 @@ export class PatientLoginComponent implements OnInit {
       },err => {
           this.errorMessage = err.error.message;
           console.log(this.errorMessage)
-          this.toastr.error('Login Error!', 'Invalid Credentials');
+          this.toastr.error('Login Error!', 'Invalid Username/Password');
       }
     );
 
