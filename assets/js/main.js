@@ -44,7 +44,7 @@
 //     hamburger.classList.remove("active");
 //     navMenu.classList.remove("active");
 // }
-var faders = document.querySelectorAll(".fade-in");
+
 function scrollServices(){
   window.scrollTo(0,1500);
 }
@@ -60,28 +60,3 @@ function scrollContact(){
 function scrollDoctors(){
   window.scrollTo(0,650);
 }
-
-
-// window.addEventListener('scroll',()=>{
-//   const scrolled = window.scrollY;
-//   console.log(scrolled)
-// });
-var appearOptions = {
-  // threshold:1,
-  // rootMargin: "0px 0px -100px 0px"
-};
-var appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-  console.log(entries)
-    entries.forEach(entry => {
-      if(!entry.isIntersecting){
-        return;
-      }else {
-        entry.target.classList.add('appear');
-        appearOnScroll.unobserve(entry.target)
-      }
-    })
-  },appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});

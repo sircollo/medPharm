@@ -1,0 +1,1 @@
+function scrollServices(){window.scrollTo(0,1500)}function scrollAbout(){window.scrollTo(0,2200)}function scrollWin(){window.scrollTo(0,2e3)}function scrollContact(){window.scrollTo(0,2700)}function scrollDoctors(){window.scrollTo(0,650)}
