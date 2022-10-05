@@ -22,12 +22,13 @@ export class PatientDashboardComponent implements OnInit {
     remindFor:null,
     reminderType: null,
     reminderDays: null,    
-    
+    tasks:{}=[],
   }
-  tasks:{} ={
-    todo: null,
-    todoTime: null,
-}
+tasks: any;
+//   tasks:{} ={
+//     todo: null,
+//     todoTime: null,
+// }
   
     
   constructor(private tokenStorage:TokenStorageService, private http:HttpClient, private toastr:ToastrService) { }
@@ -61,9 +62,9 @@ export class PatientDashboardComponent implements OnInit {
     this.isLoggedIn = false;
     window.location.reload();
   }
-  postReminder(reminders:{remindFor:string, reminderType:number,reminderDays:number, tasks:{todo:string, todoTime:string}}){
-    // console.log(this.reminders.tasks.todo)
-    this.http.post("http://medpharm001-001-site1.htempurl.com/api/Reminder/CreateReminderAsync?userId=" + this.userId, reminders).subscribe((response=>{
+  postReminder(reminder:{remindFor:string, reminderType:number,reminderDays:number, tasks:object}){
+    console.log(reminder)
+    this.http.post("http://medpharm001-001-site1.htempurl.com/api/Reminder/CreateReminderAsync?userId=" + this.userId, reminder).subscribe((response=>{
       console.log(response)
     }));
   }
