@@ -28,7 +28,7 @@ export class MedpharmComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(formData: { firstName:string,lastName:string,userName:string,email:string,address:string,phoneNumber:number,password:number,roleNames:string,gender:number}){
-    this.http.post("http://fmkdev-001-site1.dtempurl.com/api/User/create",formData).subscribe((data) => {
+    this.http.post("http://medpharm001-001-site1.htempurl.com/api/User/create",formData).subscribe((data) => {
       console.log(data)
       alert("Registration Successfull")
       this.router.navigate(["/login"]).then(() => {
